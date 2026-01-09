@@ -13,9 +13,9 @@ public class H1_main {
 		LifeGame.gridArray[4][6].setAlive(true);
 		LifeGame.gridArray[3][5].setAlive(true);
 		
-		LifeGame.computeGeneration(0);
+		LifeGame.computeGeneration(1);
 		
-		System.out.println("Aktueller Spielstand:");
+		System.out.println("Spielstand Runde 1");
 	    for (int i = 0; i < LifeGame.gridArray.length; i++) {
 	        for (int j = 0; j < LifeGame.gridArray[i].length; j++) {
 	        	if (LifeGame.gridArray[i][j].getAlive()) {
@@ -28,9 +28,9 @@ public class H1_main {
 	        System.out.println();
 	    }
 	    
-	    LifeGame.computeGeneration(1);
+	    LifeGame.computeGeneration(2);
 	    
-	    System.out.println("Spielstand Runde 1:");
+	    System.out.println("Spielstand Runde 2:");
 	    for (int i = 0; i < LifeGame.gridArray.length; i++) {
 	        for (int j = 0; j < LifeGame.gridArray[i].length; j++) {
 	        	if (LifeGame.gridArray[i][j].getAlive()) {

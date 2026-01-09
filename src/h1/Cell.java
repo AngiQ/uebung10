@@ -48,9 +48,10 @@ package h1;
 			this.alive = alive;
 		}
 		
-		Cell (int indesRow, int indexCol) {
+		Cell (int indexRow, int indexCol) {
 			this.indexRow = indexRow;
 			this.indexCol = indexCol;
+			this.alive = false;
 		}
 		
 		public void countLivingNeighbors (Cell [][] gridArray) {
@@ -62,7 +63,7 @@ package h1;
 					int R = this.indexRow + i;
 					int C = this.indexCol + j;
 					
-					if (R >= 0 && R < gridArray.length && C >= 0 && C > gridArray[0].length) {
+					if (R >= 0 && R < gridArray.length && C >= 0 && C < gridArray[0].length) {
 						if (gridArray[R][C].getAlive()) {
 							Count++;
 						}
@@ -75,7 +76,7 @@ package h1;
 		
 		private void decideNextStatus () {
 			if (this.alive) {
-				this.isAliveNextGen = (numLivingNeighbors == 3 || numLivingNeighbors == 2);
+				this.isAliveNextGen = (numLivingNeighbors == 2 || numLivingNeighbors == 3);
 			}
 			else {
 				this.isAliveNextGen = (numLivingNeighbors == 3);
